@@ -1,5 +1,5 @@
 <?php
-	/* Template Name: CORPO CLINICO HEELJ */
+	/* Template Name: Corpo Clínico */
 ?>
 <div id="pagina-interna-heelj">
 	<?php get_header(); ?>
@@ -55,7 +55,7 @@
                 <h4 class="darkblue name-corpo-clinico center"><?php the_title(); ?></h4>
 				<?php $categorias = $categories = get_the_terms( $post_id, 'Especialidades' ); ?>
 				<p class="especialidade center"><?php foreach( $categorias as $categoria ) { echo $categoria->name; }?></p>
-				<p class="crm green center">CRM <?php $corpo_crm = get_post_meta($post->ID, 'corpo_crm', true); echo $corpo_crm; ?></p>
+				<!-- <p class="crm green center">CRM <?php $corpo_crm = get_post_meta($post->ID, 'corpo_crm', true); echo $corpo_crm; ?></p> -->
 
 			</div>
 			<?php endwhile;?><?php endif; ?><?php wp_reset_query(); ?>

@@ -24,7 +24,7 @@ function noticias_home_heelj_short($atts) { ob_start(); ?>
   			<div class="col-md-4">
 				<a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail('noticias-home-heelj'); ?></a>
 				<div class="borda-meio">
-					<p class="category-news center"><span>HEELJ em A&ccedil;&atilde;o</span></p>
+					<p class="category-news center"><span>UPA em A&ccedil;&atilde;o</span></p>
 				</div>
 				<h2 class="title-news"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<p class="resume-news"><?php the_excerpt(); ?></p>

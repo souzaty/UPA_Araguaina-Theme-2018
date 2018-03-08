@@ -1,8 +1,8 @@
 <?php
-/** HEELJ Theme Functions
+/** UPA 24hrs Theme Functions
  * @package WordPress
- * @subpackage HEELJ
- * @since HEELJ 1.0 Beta
+ * @subpackage UPA 24hrs
+ * @since UPA 24hrs 1.0
  */
 
 add_filter('wp_nav_menu_items', 'add_search_box_to_menu_heelj', 10, 2);
