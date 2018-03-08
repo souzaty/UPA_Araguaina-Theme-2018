@@ -11,21 +11,12 @@
 		</div>
 	</div>
 </section>
-<div class="container interna-padrao">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="breadcrumb">
-				<?php wp_custom_breadcrumbs(); ?>
-			</div>
-		</div>
-	</div>
-</div>
 <!-- Section Corpo Clinico -->
 <div id="corpo-clinico">
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<form class="busca-transparencia" role="search" id="busca-transparencia" method="get" action="<?php echo get_site_url(); ?>/corpo-clinico-resultado-busca/">
+			<!--<form class="busca-transparencia" role="search" id="busca-transparencia" method="get" action="<?php echo get_site_url(); ?>/corpo-clinico-resultado-busca/">
 				<div class="input-group">
 					<div class="">
 						<?php
@@ -39,7 +30,7 @@
 					<button class="btn btn-default pesquisa-label" type="submit">Pesquisar</button>
 					</span>
 				</div>
-			</form>
+			</form>-->
 			<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$wp_query = new WP_Query();

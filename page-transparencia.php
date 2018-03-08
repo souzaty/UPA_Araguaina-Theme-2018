@@ -55,7 +55,7 @@
    <section id="numeros-full" class="ghost">
       <div class="container">
          <div class="row gutter-0">
-            <?php include 'includes/hma-section_numbers_full.php'; ?>
+            <?php include 'includes/heelj-section_numbers_full.php'; ?>
          </div>
       </div>
    </section>
@@ -64,7 +64,7 @@
       <div class="container">
          <div class="row">
             <div class="col-md-9 col-sm-12">
-               <?php
+              <!-- <?php
                   $wp_query = new WP_Query();
                   $wp_query->query('post_type=transparencia&taxonomy=Ano');
                   ?>
@@ -82,7 +82,7 @@
                   endwhile;
                   endif;
                   wp_reset_query();
-                  ?>
+                  ?>-->
                <div class="panel-group" id="accordion">
                   <!-- ############## TAB 01 ############## -->
                   <div class="panel panel-default">

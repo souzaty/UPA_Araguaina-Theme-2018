@@ -1,0 +1,79 @@
+/*
+ * @package WordPress
+ * @subpackage UPA 24hrs
+ * @since UPA 24hrs 1.0
+*/
+
+/* ===== Tranparencia Styles ===== */
+.panel-heading .title-panel.collapsed:after {
+font-family:"FontAwesome";
+content:"\f054";
+color:#81848d;
+font-weight:lighter;
+float:left;
+margin-right:10px
+}
+
+.panel-heading .title-panel:after {
+font-family:"FontAwesome";
+content:"\f078";
+color:#81848d;
+font-weight:lighter;
+float:left;
+margin-right:10px;
+margin-top:3px
+}
+
+.panel-default>.panel-heading {
+background:#fff;
+border:none;
+border-bottom:1px solid #c6c6c6;
+padding:
+}
+
+.panel-heading {
+padding:0
+}
+
+.title-panel {
+display:block;
+padding:25px 15px
+}
+
+a.title-panel.collapsed {
+    color: #878787;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 3px;
+    padding: 20px 0;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body  {
+background:#fff !important;
+padding:0;
+}
+
+.doc-transparencia {
+    display: inline-block !important;
+    padding: 5px 0 !important;
+    min-height: 40px !important;
+    width: 100% !important;
+}
+
+.panel-group {
+margin-top:0;
+margin-bottom:30px
+}
+
+.panel {
+margin-bottom:20px;
+background-color:#fff;
+border:none;
+border-radius:none;
+box-shadow:none
+}
+
+.panel-body {
+background:#f2f2f2;
+border-top:1px solid #c6c6c6
+}
