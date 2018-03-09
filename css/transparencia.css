@@ -1,10 +1,20 @@
 /*
  * @package WordPress
- * @subpackage UPA 24hrs
- * @since UPA 24hrs 1.0
+ * @subpackage HMA
+ * @since HMA 1.0
 */
 
 /* ===== Tranparencia Styles ===== */
+.form-transparencia .form-control {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+.form-transparencia .form-control::placeholder {
+    color:#fff !important;
+}
+
 .panel-heading .title-panel.collapsed:after {
 font-family:"FontAwesome";
 content:"\f054";
