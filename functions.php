@@ -395,7 +395,7 @@ add_filter( 'login_headerurl', 'my_login_logo_url' );
 
 /***** Change Alt Attribute *****/
 function my_login_logo_url_title() {
-    return 'HEELJ - Hospital Estadual Ernestina Lopes Jaime.';
+    return 'UPA 24hrs - Anatólio Dias Carneiro.';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 // End Customize wp-login Page
