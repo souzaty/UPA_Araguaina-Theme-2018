@@ -13,39 +13,7 @@
          <div class="container">
             <div class="row campo-pesquisa">
                <div class="col-lg-12">
-                  <form class="busca-transparencia" role="search" id="busca-transparencia" method="get" action="<?php echo get_site_url(); ?>/transparencia-resultado/">
-                     <div class="input-group">
-                        <div class="input-group-btn">
-                           <!-- Aqui -->
-                           <?php
-                              $busca_unidade_id = get_categories('post_type=transparencia&parent=0&hide_empty=0&value_field=slug&taxonomy=Tipo+documento&orderby=taxonomy_slug=Tipo+documento&hierarchical=1&depth=1&order=ASC');
-                              $busca_unidade_id = wp_list_pluck($busca_unidade_id, 'slug');
-                              $busca_unidade_id = implode(", ", $busca_unidade_id);
-                              $select           = wp_dropdown_categories('show_option_none=Unidades&option_none_value=' . $busca_unidade_id . '&hide_empty=0&echo=0&id=unidadeSelect&name=unidadeSelect&class=btn btn-default dropdown-toggle filtro-label&post_type=transparencia&value_field=slug&taxonomy=Tipo+documento&orderby=taxonomy_slug=Tipo+documento&hierarchical=1&depth=1&order=ASC');
-                              $replace          = "<select$1 onchange='alteraAction(this.value)' class='btn btn-default dropdown-toggle filtro-label'>";
-                              $select           = preg_replace('#<select([^>]*)>#', $replace, $select);
-                              echo $select;
-                              ?>
-                        </div>
-                        <div class="input-group-btn">
-                           <?php
-                              $busca_ano_id = get_categories('post_type=transparencia&parent=0&hide_empty=0&value_field=slug&taxonomy=Ano&orderby=taxonomy_slug=Ano&hierarchical=1&depth=1&order=ASC');
-                              $busca_ano_id = wp_list_pluck($busca_ano_id, 'slug');
-                              $busca_ano_id = implode(", ", $busca_ano_id);
-                              $select       = wp_dropdown_categories('show_option_none=Periodo&option_none_value=' . $busca_ano_id . '&hide_empty=0&echo=0&id=anoSelect&name=anoSelect&class=btn btn-default dropdown-toggle filtro-label periodo&post_type=transparencia&value_field=slug&taxonomy=Ano&orderby=taxonomy_slug=Ano=1&depth=1&order=ASC');
-                              $replace      = "<select$1 onchange='alteraAction(this.value)' class='btn btn-default dropdown-toggle filtro-label'>";
-                              $select       = preg_replace('#<select([^>]*)>#', $replace, $select);
-                              echo $select;
-                              ?>
-                        </div>
-                        <!-- /btn-group -->
-                        <input type="text" class="form-control input-label" aria-label="..." type="search" name="pesquisa_transparencia" id="pesquisa_transparencia">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default pesquisa-label" type="submit">Pesquisar</button>
-                        </span>
-                     </div>
-                  </form>
-                  <!-- /input-group -->
+                  <hr style="height:100px; background:transparent; border:none;" >
                </div>
             </div>
          </div>

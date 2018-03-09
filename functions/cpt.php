@@ -412,6 +412,229 @@ function trabalhe_custom_columns($column)
 }
 // End CPT Trabalhe Conosco
 
+// Start CPT Transparencia
+add_action('init', 'transparencia_register');
+function transparencia_register()
+{
+				$eventos_permalink = 'transparencia';
+				$labels            = array(
+								'name' => __('Prestação de contass', 'Tipo de post para incluir Prestação de contass.'),
+								'singular_name' => __('Prestação de conta', 'post type singular name'),
+								'all_items' => __('Todas Prestações de Contas'),
+								'add_new' => _x('Nova Prestação de conta', 'Nova Prestação de conta'),
+								'add_new_item' => __('Adicionar nova Prestação de conta'),
+								'edit_item' => __('Editar Prestação de conta'),
+								'new_item' => __('Nova Prestação de conta Item'),
+								'view_item' => __('Ver item da Prestação de conta'),
+								'search_items' => __('Procurar Prestação de conta'),
+								'not_found' => __('Nenhuma Prestação de conta encontrada'),
+								'not_found_in_trash' => __('Nenhuma Prestação de conta encontrada na lixeira'),
+								'parent_item_colon' => ''
+				);
+				$args              = array(
+								'labels' => $labels,
+								'public' => true,
+								'publicly_queryable' => true,
+								'show_ui' => true,
+								'query_var' => true,
+								'menu_icon' => 'dashicons-visibility',
+								'rewrite' => array(
+												'slug' => 'transparencia',
+												'with_front' => false
+								),
+								'capability_type' => 'post',
+								'hierarchical' => false,
+								'menu_position' => 5,
+								'supports' => array(
+												'title'
+								)
+				);
+				register_post_type('transparencia', $args);
+				flush_rewrite_rules();
+}
+register_taxonomy("Ano", array(
+				"transparencia"
+), array(
+				"hierarchical" => true,
+				"label" => "Ano",
+				"singular_label" => "Ano",
+				"rewrite" => array(
+								'slug' => 'ano'
+				),
+				"public" => true,
+				"show_ui" => true,
+				"_builtin" => true
+));
+register_taxonomy("Tipo documento", array(
+				"transparencia"
+), array(
+				"hierarchical" => true,
+				"label" => "Tipo Documento",
+				"singular_label" => "tipo-documento",
+				"rewrite" => array(
+								'slug' => 'tipo-documento'
+				),
+				"public" => true,
+				"show_ui" => true,
+				"_builtin" => true
+));
+/* Filtro para modificar permalink */
+add_filter('post_link', 'transparencia_permalink', 1, 3);
+add_filter('post_type_link', 'transparencia_permalink', 1, 3);
+function transparencia_permalink($permalink, $post_id, $leavename)
+{
+	// con %brand% catturo il rewrite del Custom Post Type
+	if (strpos($permalink, '%ano%') === FALSE)
+					return $permalink;
+	// Get post
+	$post = get_post($post_id);
+	if (!$post)
+					return $permalink;
+	// Get taxonomy terms
+	$terms = wp_get_object_terms($post->ID, 'Ano');
+	if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0]))
+					$taxonomy_slug = $terms[0]->slug;
+	else
+					$taxonomy_slug = 'no-brand';
+	return str_replace('%Ano%', $taxonomy_slug, $permalink);
+}
+add_action("admin_init", "campos_personalizados_transparencia");
+function campos_personalizados_transparencia()
+{
+				add_meta_box("upload_documento_transparencia", "Fa&ccedil;a o upload do documento", "upload_documento_transparencia", "transparencia", "normal", "low");
+}
+function upload_documento_transparencia()
+{
+				global $post;
+				// Procura o valor da chave 'upload_file'
+				$upload_documento_transparencia = get_post_meta($post->ID, 'upload_documento_transparencia', true);
+?>
+
+		<p>Clique no botão para fazer o upload de um documento. Após
+			o término do upload, clique em <em>Inserir no post</em>.</p>
+		<p>
+			<input id="upload_image" type="text" size="80"
+				name="upload_documento_transparencia" style="width: 85%;"
+				value="<?php
+				if (!empty($upload_documento_transparencia))
+								echo $upload_documento_transparencia;
+?>" />
+
+			<input id="upload_image_button" type="button" class="button"
+				value="Fazer upload" />
+		</p>
+		<?php
+}
+add_action('save_post_transparencia', 'save_details_post_transparencia');
+function save_details_post_transparencia()
+{
+				global $post;
+				update_post_meta($post->ID, "upload_documento_transparencia", $_POST["upload_documento_transparencia"]);
+}
+function buscaTransparencia()
+{
+				global $post;
+				$ano = $_POST['ano_busca'];
+?>
+		<div class="tab-pane active" id="financeiro">
+
+			<?php
+				$wp_query = new WP_Query();
+				$wp_query->query('post_type=transparencia&ano=' . $ano . '&tipo-documento=relacao-de-gestores-recursos-humanos-ibgh&posts_per_page=100');
+				$count = 0;
+?>
+			<?php
+				if ($wp_query->have_posts()):
+								while ($wp_query->have_posts()):
+												$wp_query->the_post();
+?>
+			<?php
+												$upload_documento_transparencia = get_post_meta($post->ID, 'upload_documento_transparencia', true);
+?>
+
+
+			<a href="<?php
+												echo $upload_documento_transparencia;
+?>"
+				target="_blank"><i class="fa fa-arrow-circle-o-down"
+				aria-hidden="true"></i> <?php
+												the_title();
+?></a>
+
+				<?php
+								endwhile;
+				endif;
+?>
+
+									</div>
+
+		<div class="tab-pane" id="processo-de-aquisicao">
+
+										<?php
+				$wp_query = new WP_Query();
+				$wp_query->query('post_type=transparencia&ano=' . $ano . '&meta_key=tipo_pretacao_conta&meta_value=heelj-processo-de-aquisicao&posts_per_page=100');
+?>
+
+									    <?php
+				if ($wp_query->have_posts()):
+								while ($wp_query->have_posts()):
+												$wp_query->the_post();
+?>
+											<?php
+												$upload_documento_transparencia = get_post_meta($post->ID, 'upload_documento_transparencia', true);
+?>
+											<a href="<?php
+												echo $upload_documento_transparencia;
+?>"
+				target="_blank"><i class="fa fa-arrow-circle-o-down"
+				aria-hidden="true"></i> <?php
+												the_title();
+?></a>
+										<?php
+								endwhile;
+				endif;
+?>
+
+									</div>
+
+		<div class="tab-pane" id="demonstrativo">
+
+										<?php
+				$wp_query = new WP_Query();
+				$wp_query->query('post_type=transparencia&ano=' . $ano . '&meta_key=tipo_pretacao_conta&meta_value=demonstrativo&posts_per_page=100');
+?>
+
+									    <?php
+				if ($wp_query->have_posts()):
+								while ($wp_query->have_posts()):
+												$wp_query->the_post();
+?>
+											<?php
+												$upload_documento_transparencia = get_post_meta($post->ID, 'upload_documento_transparencia', true);
+?>
+											<a href="<?php
+												echo $upload_documento_transparencia;
+?>"
+				target="_blank"><i class="fa fa-arrow-circle-o-down"
+				aria-hidden="true"></i> <?php
+												the_title();
+?></a>
+
+										<?php
+								endwhile;
+				endif;
+?>
+
+									</div>
+		<?php
+				// doSomeStuff
+				die(); // Lembre sempre de finalizar a execução pois, caso contrario o wordpress retornará 0.
+}
+// Adiciona a funcao extra votos aos hooks ajax do WordPress.
+add_action('wp_ajax_buscaTransparencia', 'buscaTransparencia');
+add_action('wp_ajax_nopriv_buscaTransparencia', 'buscaTransparencia');
+// End CPT Transparência
+
 // Start Excerpt Lenght
 function the_excerpt_lenght($before = '', $after = '', $echo = true, $length = false)
 {
