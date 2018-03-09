@@ -5,6 +5,15 @@
 */
 
 /* ===== Tranparencia Styles ===== */
+#transparencia-hma header {
+    background-image: url(http://ibgh.org.br/wp-content/uploads/revslider/home-heelj/SLIDE-HEELJ.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: top center;
+    background-size: cover;
+    color: white;
+}
+
 .form-transparencia .form-control {
     background: transparent !important;
     border: 2px solid #fff !important;
