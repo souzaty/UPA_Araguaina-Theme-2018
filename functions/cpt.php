@@ -1,8 +1,8 @@
 <?php
 /** Theme Custom Post Types
  * @package WordPress
- * @subpackage HEELJ
- * @since HEELJ 1.0 Beta
+ * @subpackage UPA 24hrs
+ * @since UPA 24hrs 1.0 Beta
  */
 
  // Start CPT Corpo Clínico
@@ -81,8 +81,8 @@
  add_action('init', 'servicos_heelj');
  function servicos_heelj() {
  	$labels = array(
- 		'name' => __('Serviços HEELJ', 'Tipo de post para incluir os serviços do HEELJ.'),
- 		'singular_name' => __('serviços HEELJ', 'post type singular name'),
+ 		'name' => __('Serviços', 'Tipo de post para incluir os serviços da UPA.'),
+ 		'singular_name' => __('serviços', 'post type singular name'),
  		'all_items' => __('Todos os serviços'),
  		'add_new' => _x('Novo serviço', 'Novo serviço'),
  		'add_new_item' => __('Add novo serviço'),
