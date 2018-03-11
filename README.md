@@ -1,3 +1,5 @@
 #UPA-Theme-2018
-Wordpress Theme for UPA Anatólio Dias Carneiro
-Versão 1.0 Beta
+
+## Wordpress Theme for _UPA Anatólio Dias Carneiro_
+
+**versão:** 1.0
