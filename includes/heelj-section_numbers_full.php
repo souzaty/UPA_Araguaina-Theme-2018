@@ -1,5 +1,4 @@
 <?php
-
 /**
 * @package WordPress
 * @subpackage UPA 24hrs
