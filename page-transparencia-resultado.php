@@ -1,9 +1,9 @@
 <?php
 /* Template Name: Transparência Resultado */
 /**
- * @package WordPress
- * @subpackage HMA
- * @since HMA 1.0
+* @package WordPress
+* @subpackage UPA 24hrs
+* @since UPA 24hrs 1.0 Beta
 */
 ?>
 <?php get_header(); ?>

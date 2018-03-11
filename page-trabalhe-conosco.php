@@ -1,5 +1,10 @@
 <?php
-	/* Template Name: Trabalhe Conosco */
+/* Template Name: Trabalhe Conosco */
+/**
+* @package WordPress
+* @subpackage UPA 24hrs
+* @since UPA 24hrs 1.0 Beta
+*/
 ?>
 <div id="pagina-interna-heelj">
 	<?php get_header(); ?>

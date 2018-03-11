@@ -1,2 +1,2 @@
-# HEELJ-Theme-2018
-Wordpress Theme for hospital Estadual Ernestina Lopes Jaime
+#UPA-Theme-2018
+Wordpress Theme for UPA Anatólio Dias Carneiro

@@ -1,10 +1,10 @@
 <?php
-	/**
-	 * @package WordPress
-	 * @subpackage HEELJ
-	 * @since HEELJ 1.0 Beta
-	*/
-	?>
+/**
+* @package WordPress
+* @subpackage UPA 24hrs
+* @since UPA 24hrs 1.0 Beta
+*/
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>

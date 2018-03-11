@@ -1,5 +1,10 @@
 <?php
-	/* Template Name: Category PHP */ 
+/* Template Name: Category PHP */
+/**
+* @package WordPress
+* @subpackage UPA 24hrs
+* @since UPA 24hrs 1.0 Beta
+*/
 ?>
 <?php
 	global $post;

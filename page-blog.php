@@ -1,9 +1,10 @@
 <?php
-    /**
-    * @package WordPress
-    * @subpackage HMA
-    * @since HMA 1.0
-    * Template Name: Página de Notícias */
+/* Template Name: Página de Notícias */
+/**
+* @package WordPress
+* @subpackage UPA 24hrs
+* @since UPA 24hrs 1.0 Beta
+*/
 ?>
 
 <div id="pagina-interna-heelj">

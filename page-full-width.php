@@ -1,9 +1,9 @@
 <?php
 /* Template Name: Full Widht page */
 /**
- * @package WordPress
- * @subpackage HEELJ
- * @since HEELJ 1.0
+* @package WordPress
+* @subpackage UPA 24hrs
+* @since UPA 24hrs 1.0 Beta
 */
 ?>
 <div id="pagina-interna-heelj">

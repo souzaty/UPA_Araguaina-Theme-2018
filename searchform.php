@@ -1,5 +1,10 @@
 <?php
 /** Template Name: Search Form **/
+/**
+* @package WordPress
+* @subpackage UPA 24hrs
+* @since UPA 24hrs 1.0 Beta
+*/
 ?>
 <form role='search' method='get' class='search-form' action='" . esc_url(home_url('/')) . "'>
 	<div class='box box-header navbar-custom-hospital clearColor'>
