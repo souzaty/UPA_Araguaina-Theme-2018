@@ -1145,6 +1145,12 @@ margin-bottom:75px
 }
 
 @media (max-width: 768px) {
+img.logo-upa {
+width: 50%;
+height: auto;
+margin: 20px 0 0 10px;
+}
+
 .ghost {
 display: none !important;
 }
